@@ -1,0 +1,22 @@
+html, body {
+  height: 100%;
+  position: relative;	
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+#game {
+  width: 95%;
+  height: 95%;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  border: 1px solid #bbb;
+  background-color: #aaf;
+}
+
+@keyframes nudgeRight {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(1px, 0); }
+}
