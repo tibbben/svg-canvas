@@ -37,7 +37,7 @@
 		
 		mousex = 500, mousey = 300,                     // mouse position
 		
-		speed = 7, trajectory = -Math.PI*0.9,                    // inverse speed (mouse follow)
+		speed = 7, trajectory = -Math.PI*0.9,           // inverse speed (mouse follow)
 		                                                // speed and angle (pong)
 		
 		w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
@@ -67,9 +67,9 @@
 		rectNode.setAttribute("x",xpos);
 		rectNode.setAttribute("y",ypos);
 		if ( borderwidth > 0 ) {
-			rectNode.style = 'fill: ' + bgcolor + '; ' +
+			rectNode.setAttribute("style", 'fill: ' + bgcolor + '; ' +
 		                     'stroke: ' + bordercolor + '; ' +
-		                     'stroke-width: ' + borderwidth + '; '
+		                     'stroke-width: ' + borderwidth + '; ');
 		}
 		destSVG.appendChild(rectNode);
 		return document.getElementById(id);
@@ -180,8 +180,8 @@
 		requestAnimFrame ( iterate );
 		
 		// ball follows mouse
-		//ball.x.baseVal.value += ((mousex - 8 - (ball.x.baseVal.value) ) / speed);
-		//ball.y.baseVal.value += ((mousey - 10 - (ball.y.baseVal.value) ) / speed);
+		/* ball.x.baseVal.value += ((mousex - 8 - (ball.x.baseVal.value) ) / speed);
+		ball.y.baseVal.value += ((mousey - 10 - (ball.y.baseVal.value) ) / speed); */
 		
 		// add more action here
 		
@@ -190,14 +190,14 @@
 			p1paddle.y.baseVal.value += p1dy;
 		} else if ( p1paddle.y.baseVal.value < 13 && p1dy > 0 ) {
 			p1paddle.y.baseVal.value += p1dy;
-		} else if ( p1paddle.y.baseVal.value > ( h - 50 ) && p1dy < 0 ) {
+		} else if ( p1paddle.y.baseVal.value > ( h - 60 ) && p1dy < 0 ) {
 			p1paddle.y.baseVal.value += p1dy;
 		}
 		if ( p2paddle.y.baseVal.value >= 13 && p2paddle.y.baseVal.value <= (h - 53) ) {
 			p2paddle.y.baseVal.value += p2dy;
 		} else if ( p2paddle.y.baseVal.value < 13 && p2dy > 0 ) {
 			p2paddle.y.baseVal.value += p2dy;
-		} else if ( p2paddle.y.baseVal.value > ( h - 50 ) && p2dy < 0 ) {
+		} else if ( p2paddle.y.baseVal.value > ( h - 60 ) && p2dy < 0 ) {
 			p2paddle.y.baseVal.value += p2dy;
 		}
 		
