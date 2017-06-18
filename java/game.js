@@ -162,6 +162,7 @@
 				p1dy = 0;
 				break;
 			case 59:
+			case 186:
 			case 190:
 				p2dy = 0;
 				break;	
